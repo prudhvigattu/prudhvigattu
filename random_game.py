@@ -6,6 +6,7 @@ choice=int(input("which level do you want to play:"))
 number=random.randint(1,10)
 chance=0
 flag=0
+result=0
 if(choice<=3 and choice!=0):
     while chance<=choice*2:
         guess=int(input("Guess the number:"))
@@ -14,12 +15,11 @@ if(choice<=3 and choice!=0):
             print("u won the game in",chance,"chances")
             flag=1
             break;
+        elif(guess==number):
+            print("\t")
         else:
             print("\tRETRY")
 else:
     print("\tINVALID CHOICE")
-    exit;
 if(flag==0):
-    print("\tU LOST THE GAME!!!!!!!!")
-
-
+    print("\tU LOST THE GAME!!!!\n\tThe correct answer is",number)
